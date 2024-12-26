@@ -16,7 +16,6 @@ customer_orders as (
         count(order_id) as number_of_orders,
         sum(amount) as lifetime_value
     from orders
-    where order_status <> 'returned' and payment_status = 'success'
     group by 1
 ),
 
