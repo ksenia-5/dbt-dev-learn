@@ -7,21 +7,11 @@
 with 
 
 customers as (
-    select
-        id as customer_id,
-        first_name,
-        last_name
-    from raw.jaffle_shop.customers
+    select * from {{ ref('stg_jaffle_shop__customers') }}
 ),
 
 orders as (
-    select
-        id as order_id,
-        user_id as customer_id,
-        status as order_status,
-        order_date,
-        _etl_loaded_at as last_modified_at
-    from raw.jaffle_shop.orders
+    select * from {{ ref('stg_jaffle_shop__orders') }}
 ),
 
 customer_orders as (
