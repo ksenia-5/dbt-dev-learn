@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: stg_stripe__payments
+    description: one payment record per row
+    columns:
+      - name: payment_id
+        description: primary key
+        tests:
+          - unique
+          - not_null
+      - name: order_id
+        description: the unique id of the order, referencing the orders table
+      - name: payment_method
+        description: the method used for payment of the order
+      - name: payment_status
+        description: "{{ doc('payment_status') }}"
+      - name: amount
+        description: the payment amount in US dollars to 2 d.p.
+      - name: payment_created_at
+        description: the datetime of the payment transaction
+      - name: last_modified_at
+        description: the date time the payment was last processed in the data warehouse
