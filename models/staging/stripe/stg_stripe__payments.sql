@@ -6,4 +6,4 @@ select
     round(amount / 100.0, 2) as amount,
     created as payment_created_at,
     _batched_at as last_modified_at
-from raw.stripe.payment
+from {{ source('stripe', 'payment') }}

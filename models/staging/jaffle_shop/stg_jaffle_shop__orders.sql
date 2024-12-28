@@ -4,4 +4,4 @@ select
     status as order_status,
     order_date,
     _etl_loaded_at as last_modified_at
-from raw.jaffle_shop.orders
+from {{ source('jaffle_shop', 'orders') }}
