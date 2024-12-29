@@ -32,4 +32,4 @@ final as (
     left join customer_orders using(customer_id)
 )
 
-select sum(lifetime_value) from final
+select * from final
