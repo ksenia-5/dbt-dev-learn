@@ -7,6 +7,8 @@ develop a macro that
 3. generates automated drop statements
 4. has the ability to execute those drop statements
 
+To run use `dbt run-operation clean_stale_models --args '{'dry_run' : 'False'}'`
+
 #}
 
 {% macro clean_stale_models(database=target.database, schema=target.schema, days=7, dry_run=True) %}
