@@ -22,3 +22,7 @@ exposures:
     owner: 
       name: Dave McData
       email: data@jaffleshop.com
+
+
+# dbt run --select +exposure:orders_data
+# dbt run --select +exposure:customers_data
