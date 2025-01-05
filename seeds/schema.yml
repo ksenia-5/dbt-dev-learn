@@ -2,6 +2,8 @@ version: 2
 
 seeds:
   - name: employees
+    config:
+      +full_refresh: true
     description: a manual map of employees to customers
     columns:
       - name: employee_id
