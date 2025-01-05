@@ -1,0 +1,15 @@
+version: 2
+
+seeds:
+  - name: employees
+    description: a manual map of employees to customers
+    columns:
+      - name: employee_id
+        description: the unique identifier of the employee, references the employee table.
+        tests:
+          - unique
+          - not_null
+      - name: email
+        description: the email of the employee
+      - name: customer_id
+        description: the unique identifier of the customer, references the customer table.
